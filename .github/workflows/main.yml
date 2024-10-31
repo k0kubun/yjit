@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         ruby:
-          - '3.3.5'
+          - '3.3'
 
     steps:
     - uses: actions/checkout@v4
@@ -23,5 +23,5 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true
-    - name: Run the default task
-      run: bundle exec rake
+    - name: Test
+      run: bundle exec ruby -ryjit -e 'abort "YJIT is not enabled" unless RubyVM::YJIT.enabled?'
