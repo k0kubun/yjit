@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "lib/yjit/version"
-
 Gem::Specification.new do |spec|
   spec.name = "yjit"
-  spec.version = Yjit::VERSION
+  spec.version = "0.1.0"
   spec.authors = ["Takashi Kokubun"]
   spec.email = ["takashikkbn@gmail.com"]
 
